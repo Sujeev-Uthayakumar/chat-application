@@ -112,6 +112,7 @@ $weatherFormButton.addEventListener("click", (e) => {
 });
 
 socket.emit("join", { username, room }, (error) => {
+  // If the callback is returned, the error property exists and an alert message is displayed
   if (error) {
     alert(error);
     location.href = "/";

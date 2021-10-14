@@ -33,6 +33,7 @@ io.on("connection", (socket) => {
   socket.on("join", ({ username, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, username, room });
 
+    // If an error property exists, the callback is send back with an error
     if (error) {
       return callback(error);
     }
